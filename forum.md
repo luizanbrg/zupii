@@ -1,5 +1,7 @@
 # Zoopi – La nouvelle manière de gérer les tâches… en s’amusant !
 
+![banner](./assets/zupi.png)
+
 ## **Pourquoi ce projet ?**
 
 Aujourd’hui, la gestion des tâches ménagères crée plus de tensions que de coopération :
