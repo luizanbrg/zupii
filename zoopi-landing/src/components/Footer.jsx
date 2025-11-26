@@ -1,17 +1,26 @@
 import { motion } from "framer-motion";
+import {
+  Gamepad2,
+  Mail,
+  Briefcase,
+  Rocket,
+  Link2,
+  Heart,
+  Coffee,
+} from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer
-      id="vote"
-      className="bg-navy-dark text-white py-16 relative overflow-hidden"
+      id="contact"
+      className="bg-dark-blue text-white py-16 relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-teal rounded-full blur-3xl" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary-coral rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-blue rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-light-sand rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -24,17 +33,19 @@ const Footer = () => {
           className="text-center mb-16 pb-16 border-b border-white/10"
         >
           <div className="inline-block mb-6">
-            <div className="text-6xl mb-4">🗳️</div>
+            <div className="flex justify-center mb-4">
+              <Rocket size={64} className="text-light-sand" />
+            </div>
             <h2 className="text-4xl lg:text-5xl font-extrabold mb-4">
-              Votez pour Zoopi !
+              Rejoignez l'aventure Zoopi !
             </h2>
           </div>
 
-          <p className="text-xl text-neutral-surface max-w-2xl mx-auto mb-8">
-            Aidez-nous à transformer la gestion des tâches ménagères en jeu
-            collaboratif.
+          <p className="text-xl text-light-sand max-w-2xl mx-auto mb-8">
+            Nous recherchons des talents passionnés pour développer
+            l'application qui va transformer la gestion des tâches ménagères.
             <br />
-            Votre vote compte pour faire de Zoopi une réalité !
+            Développeurs, designers, data scientists... Rejoignez-nous !
           </p>
 
           <motion.button
@@ -44,15 +55,18 @@ const Footer = () => {
             }}
             whileTap={{ scale: 0.95 }}
             onClick={() =>
-              window.open("https://forms.gle/your-vote-form", "_blank")
+              document
+                .getElementById("recruitment")
+                ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="px-12 py-6 bg-gradient-to-r from-primary-teal via-secondary-coral to-soft-yellow text-navy-dark text-2xl font-extrabold rounded-card shadow-elevated hover:shadow-elevated transition-all duration-300"
+            className="px-12 py-6 bg-gradient-to-r from-primary-blue via-light-sand to-light-sand text-dark-blue text-2xl font-extrabold rounded-card shadow-elevated hover:shadow-elevated transition-all duration-300 flex items-center justify-center gap-3"
           >
-            🚀 VOTER MAINTENANT
+            <Briefcase size={28} />
+            VOIR LES POSTES
           </motion.button>
 
-          <p className="text-sm text-neutral-surface mt-6 opacity-75">
-            Formulaire rapide • Moins de 30 secondes
+          <p className="text-sm text-light-sand mt-6 opacity-75">
+            Postes ouverts en développement mobile, backend, IA et design
           </p>
         </motion.div>
 
@@ -61,18 +75,18 @@ const Footer = () => {
           {/* About */}
           <div>
             <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-              <span>🎮</span>
+              <Gamepad2 size={28} />
               <span>Zoopi</span>
             </h3>
-            <p className="text-neutral-surface leading-relaxed mb-4">
+            <p className="text-light-sand leading-relaxed mb-4">
               L'application mobile qui gamifie les tâches ménagères pour rendre
               votre foyer plus coopératif et agréable.
             </p>
             <div className="flex gap-2">
-              <span className="inline-block px-3 py-1 bg-primary-teal/20 text-primary-teal text-xs font-semibold rounded-full">
+              <span className="inline-block px-3 py-1 bg-primary-blue/20 text-primary-blue text-xs font-semibold rounded-full">
                 MVP Ready
               </span>
-              <span className="inline-block px-3 py-1 bg-secondary-coral/20 text-secondary-coral text-xs font-semibold rounded-full">
+              <span className="inline-block px-3 py-1 bg-light-sand/20 text-light-sand text-xs font-semibold rounded-full">
                 18 mois roadmap
               </span>
             </div>
@@ -80,22 +94,27 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-xl font-bold mb-4">📬 Contact</h3>
-            <ul className="space-y-3 text-neutral-surface">
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <Mail size={20} />
+              Contact
+            </h3>
+            <ul className="space-y-3 text-light-sand">
               <li>
                 <a
                   href="mailto:luiza.nobrega@epitech.eu"
-                  className="hover:text-primary-teal transition-colors"
+                  className="hover:text-primary-blue transition-colors flex items-center gap-2"
                 >
-                  📧 luiza.nobrega@epitech.eu
+                  <Mail size={16} />
+                  luiza.nobrega@epitech.eu
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:axel1.huguet@epitech.eu"
-                  className="hover:text-primary-teal transition-colors"
+                  className="hover:text-primary-blue transition-colors flex items-center gap-2"
                 >
-                  📧 axel1.huguet@epitech.eu
+                  <Mail size={16} />
+                  axel1.huguet@epitech.eu
                 </a>
               </li>
               <li>
@@ -103,9 +122,10 @@ const Footer = () => {
                   href="https://www.linkedin.com/in/luiza-nobrega-felix/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary-teal transition-colors"
+                  className="hover:text-primary-blue transition-colors flex items-center gap-2"
                 >
-                  💼 LinkedIn Luiza
+                  <Briefcase size={16} />
+                  LinkedIn Luiza
                 </a>
               </li>
               <li>
@@ -113,9 +133,10 @@ const Footer = () => {
                   href="https://www.linkedin.com/in/axel-huguet/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary-teal transition-colors"
+                  className="hover:text-primary-blue transition-colors flex items-center gap-2"
                 >
-                  💼 LinkedIn Axel
+                  <Briefcase size={16} />
+                  LinkedIn Axel
                 </a>
               </li>
             </ul>
@@ -123,12 +144,15 @@ const Footer = () => {
 
           {/* Links */}
           <div>
-            <h3 className="text-xl font-bold mb-4">🔗 Liens</h3>
-            <ul className="space-y-3 text-neutral-surface">
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <Link2 size={20} />
+              Liens
+            </h3>
+            <ul className="space-y-3 text-light-sand">
               <li>
                 <a
                   href="#hero"
-                  className="hover:text-primary-teal transition-colors"
+                  className="hover:text-primary-blue transition-colors"
                 >
                   Accueil
                 </a>
@@ -136,7 +160,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#features"
-                  className="hover:text-primary-teal transition-colors"
+                  className="hover:text-primary-blue transition-colors"
                 >
                   Features
                 </a>
@@ -144,7 +168,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#demo"
-                  className="hover:text-primary-teal transition-colors"
+                  className="hover:text-primary-blue transition-colors"
                 >
                   Démo
                 </a>
@@ -152,7 +176,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#roadmap"
-                  className="hover:text-primary-teal transition-colors"
+                  className="hover:text-primary-blue transition-colors"
                 >
                   Roadmap
                 </a>
@@ -160,7 +184,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#recruitment"
-                  className="hover:text-primary-teal transition-colors"
+                  className="hover:text-primary-blue transition-colors"
                 >
                   Recrutement
                 </a>
@@ -170,9 +194,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-neutral-surface text-sm">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-light-sand text-sm">
           <p>© {currentYear} Zoopi. Projet étudiant Epitech MSc Nice.</p>
-          <p>Fait avec 💚 et beaucoup de ☕</p>
+          <p className="flex items-center gap-2">
+            Fait avec <Heart size={16} className="text-red-400 fill-red-400" />{" "}
+            et beaucoup de <Coffee size={16} />
+          </p>
         </div>
       </div>
     </footer>

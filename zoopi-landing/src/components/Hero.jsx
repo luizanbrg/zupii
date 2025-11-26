@@ -1,27 +1,24 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import { Gamepad2, Smartphone, Users, Trophy, Flame } from "lucide-react";
 
 const Hero = () => {
-  const videoRef = useRef(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {
-        // Autoplay was prevented
-        console.log("Autoplay prevented");
-      });
-    }
-  }, []);
+  const scrollToDemo = () => {
+    document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
+  };
 
-  const scrollToVote = () => {
-    document.getElementById("vote")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToRecruitment = () => {
+    document
+      .getElementById("recruitment")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-neutral-surface via-white to-primary-teal/5"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-light-sand via-white to-primary-blue/5"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -29,13 +26,13 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.1, scale: 1 }}
           transition={{ duration: 1.5 }}
-          className="absolute top-20 right-10 w-96 h-96 bg-primary-teal rounded-full blur-3xl"
+          className="absolute top-20 right-10 w-96 h-96 bg-primary-blue rounded-full blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.08, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.3 }}
-          className="absolute bottom-20 left-10 w-80 h-80 bg-secondary-coral rounded-full blur-3xl"
+          className="absolute bottom-20 left-10 w-80 h-80 bg-light-sand rounded-full blur-3xl"
         />
       </div>
 
@@ -53,19 +50,20 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="inline-block px-4 py-2 bg-soft-yellow text-navy-dark text-sm font-semibold rounded-full mb-6">
-                🎮 MVP Fonctionnel · Roadmap 18 mois
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-light-sand text-dark-blue text-sm font-semibold rounded-full mb-6">
+                <Gamepad2 size={16} />
+                MVP Fonctionnel · Roadmap 18 mois
               </span>
             </motion.div>
 
             <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight text-balance">
-              Fini les disputes — transformez les{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-teal to-secondary-coral">
-                corvées en jeu
+              Fini les disputes —{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-light-sand">
+                transformez les corvées en jeu
               </span>
             </h1>
 
-            <p className="text-xl lg:text-2xl text-neutral-muted leading-relaxed max-w-2xl">
+            <p className="text-xl lg:text-2xl text-text-dark leading-relaxed max-w-2xl">
               Zoopi gamifie les tâches ménagères : points, défis, classements et
               récompenses pour un foyer plus coopératif.
             </p>
@@ -73,28 +71,26 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <motion.button
-                onClick={scrollToVote}
+                onClick={scrollToDemo}
                 whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(31, 182, 165, 0.3)",
+                  boxShadow: "0 20px 40px rgba(65, 105, 225, 0.3)",
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-primary-teal text-white text-lg font-bold rounded-card shadow-soft hover:shadow-elevated transition-all duration-300"
+                className="px-8 py-4 bg-primary-blue text-white text-lg font-bold rounded-card shadow-soft hover:shadow-elevated transition-all duration-300 flex items-center justify-center gap-2"
               >
-                🗳️ Voter pour Zoopi
+                <Smartphone size={20} />
+                Découvrir l'app
               </motion.button>
 
               <motion.button
-                onClick={() =>
-                  document
-                    .getElementById("demo")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={scrollToRecruitment}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-white text-navy-dark text-lg font-semibold rounded-card shadow-soft border-2 border-neutral-surface hover:border-primary-teal transition-all duration-300"
+                className="px-8 py-4 bg-white text-dark-blue text-lg font-semibold rounded-card shadow-soft border-2 border-light-sand hover:border-primary-blue transition-all duration-300 flex items-center justify-center gap-2"
               >
-                📱 Voir la démo
+                <Users size={20} />
+                Rejoindre l'équipe
               </motion.button>
             </div>
 
@@ -103,68 +99,62 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex flex-wrap gap-8 pt-8 border-t border-neutral-surface/50"
+              className="flex flex-wrap gap-8 pt-8 border-t border-light-sand/50"
             >
               <div>
-                <div className="text-3xl font-bold text-primary-teal">82%</div>
-                <div className="text-sm text-neutral-muted">
+                <div className="text-3xl font-bold text-primary-blue">82%</div>
+                <div className="text-sm text-text-dark">
                   Conflits en colocation
                 </div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-primary-teal">60k</div>
-                <div className="text-sm text-neutral-muted">
+                <div className="text-3xl font-bold text-primary-blue">60k</div>
+                <div className="text-sm text-text-dark">
                   Objectif MAU T4 2025
                 </div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-primary-teal">
+                <div className="text-3xl font-bold text-primary-blue">
                   18 mois
                 </div>
-                <div className="text-sm text-neutral-muted">
-                  Roadmap complète
-                </div>
+                <div className="text-sm text-text-dark">Roadmap complète</div>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Right - Phone Mockup with Video */}
+          {/* Right - Phone Mockup with Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-            className="relative flex justify-center items-center lg:justify-end"
+            className="relative flex justify-center items-center"
           >
             <motion.div
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-full max-w-sm lg:max-w-md"
+              className="relative w-64 sm:w-72 md:w-80 lg:w-80"
             >
               {/* Phone mockup frame */}
-              <div className="relative aspect-[9/19] bg-gradient-to-br from-navy-dark to-primary-teal rounded-[3rem] p-3 shadow-elevated">
-                {/* Screen content area with video */}
+              <div className="relative aspect-[9/19] bg-gradient-to-br from-dark-blue to-primary-blue rounded-[3rem] p-3 shadow-elevated">
+                {/* Screen content area with image */}
                 <div className="relative w-full h-full bg-black rounded-[2.5rem] overflow-hidden">
-                  {/* Video inside phone screen */}
-                  <video
-                    ref={videoRef}
-                    className="w-full h-full object-cover"
-                    playsInline
-                    autoPlay
-                    muted
-                    loop
-                    preload="metadata"
-                    poster="/poster.jpg"
-                    onLoadedData={() => setIsVideoLoaded(true)}
-                  >
-                    <source src="/hero_loop.webm" type="video/webm" />
-                    <source src="/hero_loop.mp4" type="video/mp4" />
-                  </video>
+                  {/* Zoopi image inside phone screen */}
+                  <img
+                    src="/src/assets/zoopi.jpeg"
+                    alt="Zoopi App"
+                    className="w-full h-full object-cover object-center"
+                    style={{
+                      imageRendering: "crisp-edges",
+                      WebkitFontSmoothing: "antialiased",
+                    }}
+                    onLoad={() => setIsVideoLoaded(true)}
+                  />
 
-                  {/* Fallback image if video doesn't load */}
+                  {/* Fallback while image loads */}
                   {!isVideoLoaded && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary-teal to-secondary-coral">
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary-blue to-light-sand">
                       <div className="text-white text-center p-8">
-                        <div className="text-6xl mb-4">🎮</div>
+                        <Gamepad2 size={64} className="mx-auto mb-4" />
                         <div className="text-xl font-bold">Zoopi</div>
                         <div className="text-sm mt-2 opacity-80">
                           Gamifiez vos tâches
@@ -188,7 +178,7 @@ const Hero = () => {
                 }}
                 className="absolute -top-8 -left-8 bg-white rounded-2xl shadow-soft p-4"
               >
-                <div className="text-3xl">🏆</div>
+                <Trophy size={32} className="text-primary-blue" />
                 <div className="text-xs font-semibold mt-1">+50 pts</div>
               </motion.div>
 
@@ -202,7 +192,7 @@ const Hero = () => {
                 }}
                 className="absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-soft p-4"
               >
-                <div className="text-3xl">🔥</div>
+                <Flame size={32} className="text-orange-500" />
                 <div className="text-xs font-semibold mt-1">Streak 7j</div>
               </motion.div>
             </motion.div>
@@ -220,7 +210,7 @@ const Hero = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center text-neutral-muted cursor-pointer hover:text-primary-teal transition-colors"
+          className="flex flex-col items-center text-text-dark cursor-pointer hover:text-primary-blue transition-colors"
           onClick={() =>
             document
               .getElementById("problem")

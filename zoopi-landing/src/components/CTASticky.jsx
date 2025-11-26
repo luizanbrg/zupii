@@ -1,8 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { Smartphone } from "lucide-react";
 
 const CTASticky = ({ show }) => {
-  const scrollToVote = () => {
-    document.getElementById("vote")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToDemo = () => {
+    document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -18,16 +19,16 @@ const CTASticky = ({ show }) => {
             className="hidden md:block fixed top-6 right-6 z-50"
           >
             <motion.button
-              onClick={scrollToVote}
+              onClick={scrollToDemo}
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 20px 40px rgba(31, 182, 165, 0.4)",
+                boxShadow: "0 20px 40px rgba(65, 105, 225, 0.4)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 bg-primary-teal text-white font-bold rounded-card shadow-elevated flex items-center gap-2 hover:bg-primary-teal/90 transition-colors"
+              className="px-6 py-3 bg-primary-blue text-white font-bold rounded-card shadow-elevated flex items-center gap-2 hover:bg-primary-blue/90 transition-colors"
             >
-              <span>🗳️</span>
-              <span>Voter pour Zoopi</span>
+              <Smartphone size={20} />
+              <span>Voir la démo</span>
             </motion.button>
           </motion.div>
 
@@ -40,12 +41,12 @@ const CTASticky = ({ show }) => {
             className="md:hidden fixed bottom-6 left-6 right-6 z-50"
           >
             <motion.button
-              onClick={scrollToVote}
+              onClick={scrollToDemo}
               whileTap={{ scale: 0.95 }}
-              className="w-full px-6 py-4 bg-primary-teal text-white text-lg font-bold rounded-card shadow-elevated flex items-center justify-center gap-2"
+              className="w-full px-6 py-4 bg-primary-blue text-white text-lg font-bold rounded-card shadow-elevated flex items-center justify-center gap-2"
             >
-              <span>🗳️</span>
-              <span>Voter pour Zoopi</span>
+              <Smartphone size={24} />
+              <span>Voir la démo</span>
             </motion.button>
           </motion.div>
         </>

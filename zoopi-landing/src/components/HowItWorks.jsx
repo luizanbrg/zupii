@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { Home, ClipboardList, Gift, Wrench, Smartphone } from "lucide-react";
 
 const HowItWorks = () => {
   const ref = useRef(null);
@@ -9,21 +10,21 @@ const HowItWorks = () => {
   const steps = [
     {
       number: "1",
-      icon: "🏠",
+      icon: Home,
       title: "Créer votre foyer",
       description:
         "Invitez vos colocataires ou membres de famille en quelques clics",
     },
     {
       number: "2",
-      icon: "📝",
+      icon: ClipboardList,
       title: "Répartir les tâches",
       description:
         "Ajoutez les tâches et laissez l'IA suggérer une répartition équitable",
     },
     {
       number: "3",
-      icon: "🎁",
+      icon: Gift,
       title: "Gagner des récompenses",
       description:
         "Complétez vos tâches, gagnez des points et débloquez des vraies récompenses",
@@ -39,18 +40,19 @@ const HowItWorks = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-secondary-coral/10 text-secondary-coral text-sm font-semibold rounded-full mb-6">
-            🛠️ Comment ça marche
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-light-sand/10 text-light-sand text-sm font-semibold rounded-full mb-6">
+            <Wrench size={16} />
+            Comment ça marche
           </span>
 
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-navy-dark mb-6">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-dark-blue mb-6">
             Simple comme{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-teal to-secondary-coral">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-light-sand">
               1, 2, 3
             </span>
           </h2>
 
-          <p className="text-xl text-neutral-muted max-w-2xl mx-auto">
+          <p className="text-xl text-text-dark max-w-2xl mx-auto">
             En 3 étapes, transformez la gestion de votre foyer
           </p>
         </motion.div>
@@ -59,7 +61,7 @@ const HowItWorks = () => {
         <div className="relative max-w-5xl mx-auto">
           {/* Connecting line - desktop only */}
           <div
-            className="hidden lg:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-primary-teal via-secondary-coral to-soft-yellow"
+            className="hidden lg:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-primary-blue via-light-sand to-light-sand"
             style={{ top: "120px" }}
           />
 
@@ -75,21 +77,21 @@ const HowItWorks = () => {
                 {/* Step number circle */}
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 10 }}
-                  className="relative inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-primary-teal to-secondary-coral rounded-full text-white text-3xl font-bold mb-6 shadow-soft"
+                  className="relative inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-primary-blue to-light-sand rounded-full text-white text-3xl font-bold mb-6 shadow-soft"
                 >
                   {step.number}
 
                   {/* Icon badge */}
-                  <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl shadow-soft">
-                    {step.icon}
+                  <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-soft">
+                    <step.icon size={24} className="text-primary-blue" />
                   </div>
                 </motion.div>
 
-                <h3 className="text-2xl font-bold text-navy-dark mb-4">
+                <h3 className="text-2xl font-bold text-dark-blue mb-4">
                   {step.title}
                 </h3>
 
-                <p className="text-neutral-muted leading-relaxed">
+                <p className="text-text-dark leading-relaxed">
                   {step.description}
                 </p>
 
@@ -99,7 +101,7 @@ const HowItWorks = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
-                    className="lg:hidden flex justify-center mt-8 text-primary-teal"
+                    className="lg:hidden flex justify-center mt-8 text-primary-blue"
                   >
                     <svg
                       className="w-8 h-8"
@@ -128,23 +130,24 @@ const HowItWorks = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <p className="text-lg text-neutral-muted mb-6">
+          <p className="text-lg text-text-dark mb-6">
             Prêt à révolutionner votre quotidien ?
           </p>
           <motion.button
             onClick={() =>
               document
-                .getElementById("vote")
+                .getElementById("demo")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
             whileHover={{
               scale: 1.05,
-              boxShadow: "0 20px 40px rgba(31, 182, 165, 0.3)",
+              boxShadow: "0 20px 40px rgba(65, 105, 225, 0.3)",
             }}
             whileTap={{ scale: 0.95 }}
-            className="px-10 py-5 bg-gradient-to-r from-primary-teal to-secondary-coral text-white text-xl font-bold rounded-card shadow-elevated hover:shadow-elevated transition-all duration-300"
+            className="px-10 py-5 bg-gradient-to-r from-primary-blue to-light-sand text-white text-xl font-bold rounded-card shadow-elevated hover:shadow-elevated transition-all duration-300 flex items-center justify-center gap-2"
           >
-            🗳️ Voter pour Zoopi maintenant
+            <Smartphone size={24} />
+            Découvrir l'application
           </motion.button>
         </motion.div>
       </div>

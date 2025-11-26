@@ -12,7 +12,7 @@
   }
 
   body {
-    @apply bg-white text-navy-dark font-inter m-0;
+    @apply bg-white text-dark-blue font-inter m-0;
   }
 
   h1,
@@ -52,13 +52,13 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-neutral-surface;
+  @apply bg-light-sand;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary-teal/30 rounded-full;
+  @apply bg-primary-blue/30 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary-teal/50;
+  @apply bg-primary-blue/50;
 }

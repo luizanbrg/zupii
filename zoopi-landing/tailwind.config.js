@@ -4,12 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary-teal": "#1FB6A5",
-        "secondary-coral": "#FF6B6B",
-        "soft-yellow": "#FFD166",
-        "navy-dark": "#0B2545",
-        "neutral-surface": "#F6F8FB",
-        "neutral-muted": "#9AA6C1",
+        // Palette Zoopi officielle extraite de la charte graphique
+        "primary-blue": "#2B5A9E", // Bleu principal (fond)
+        "dark-blue": "#1E4A7C", // Bleu foncé (boutons)
+        "light-sand": "#E8D4B8", // Beige/sable plus prononcé (était #F5E6D3)
+        cream: "#FFF8ED", // Crème très clair
+        white: "#FFFFFF", // Blanc pur
+        "text-dark": "#1A1A1A", // Texte sombre
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],

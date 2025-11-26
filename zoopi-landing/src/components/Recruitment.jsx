@@ -1,6 +1,19 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import {
+  Smartphone,
+  Settings,
+  Bot,
+  Palette,
+  Flame,
+  Gift,
+  Rocket,
+  Target,
+  Mail,
+  Briefcase,
+  CheckCircle,
+} from "lucide-react";
 
 const Recruitment = () => {
   const ref = useRef(null);
@@ -8,25 +21,25 @@ const Recruitment = () => {
 
   const roles = [
     {
-      icon: "📱",
+      icon: Smartphone,
       title: "Développeur Mobile",
       tech: "React Native",
       available: 1,
     },
     {
-      icon: "⚙️",
+      icon: Settings,
       title: "Développeur Backend",
       tech: "Node.js / TypeScript",
       available: 2,
     },
     {
-      icon: "🤖",
+      icon: Bot,
       title: "Développeur IA/Data",
       tech: "Python / ML",
       available: 1,
     },
     {
-      icon: "🎨",
+      icon: Palette,
       title: "UI/UX Designer",
       tech: "Figma / Design Systems",
       available: 1,
@@ -39,12 +52,12 @@ const Recruitment = () => {
     <section
       id="recruitment"
       ref={ref}
-      className="py-24 lg:py-32 bg-gradient-to-br from-navy-dark via-primary-teal/20 to-navy-dark text-white relative overflow-hidden"
+      className="py-24 lg:py-32 bg-gradient-to-br from-dark-blue via-primary-blue/20 to-dark-blue text-white relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-primary-teal rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-64 h-64 bg-secondary-coral rounded-full blur-3xl" />
+        <div className="absolute top-20 left-20 w-64 h-64 bg-primary-blue rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-64 h-64 bg-light-sand rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -54,31 +67,36 @@ const Recruitment = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-soft-yellow/20 text-soft-yellow text-sm font-semibold rounded-full mb-6">
-            🔥 On recrute !
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-light-sand/20 text-light-sand text-sm font-semibold rounded-full mb-6">
+            <Flame size={16} />
+            On recrute !
           </span>
 
           <h2 className="text-4xl lg:text-5xl font-extrabold mb-6">
             Rejoignez l'aventure Zoopi
           </h2>
 
-          <p className="text-xl text-neutral-surface max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-light-sand max-w-2xl mx-auto mb-8">
             Vous êtes étudiant(e) en MSc et vous voulez développer une
             application mobile complète avec des fonctionnalités avancées ?
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 text-sm">
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-              <span>✅</span> MVP existant
+              <CheckCircle size={16} />
+              MVP existant
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-              <span>✅</span> Stack moderne
+              <CheckCircle size={16} />
+              Stack moderne
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-              <span>✅</span> Équipe motivée
+              <CheckCircle size={16} />
+              Équipe motivée
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-              <span>✅</span> Projet ambitieux
+              <CheckCircle size={16} />
+              Projet ambitieux
             </div>
           </div>
         </motion.div>
@@ -92,12 +110,12 @@ const Recruitment = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8, scale: 1.05 }}
-              className="bg-white/10 backdrop-blur-sm rounded-card p-6 border border-white/20 hover:border-primary-teal hover:bg-white/15 transition-all duration-300"
+              className="bg-white/10 backdrop-blur-sm rounded-card p-6 border border-white/20 hover:border-primary-blue hover:bg-white/15 transition-all duration-300"
             >
-              <div className="text-5xl mb-4">{role.icon}</div>
+              <role.icon size={48} className="text-light-sand mb-4" />
               <h3 className="text-xl font-bold mb-2">{role.title}</h3>
-              <p className="text-neutral-surface text-sm mb-3">{role.tech}</p>
-              <div className="inline-block px-3 py-1 bg-secondary-coral rounded-full text-xs font-semibold">
+              <p className="text-light-sand text-sm mb-3">{role.tech}</p>
+              <div className="inline-block px-3 py-1 bg-light-sand rounded-full text-xs font-semibold">
                 {role.available} poste{role.available > 1 ? "s" : ""} ouvert
                 {role.available > 1 ? "s" : ""}
               </div>
@@ -112,17 +130,18 @@ const Recruitment = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="max-w-4xl mx-auto bg-white/10 backdrop-blur-sm rounded-card p-8 lg:p-12 border border-white/20 mb-12"
         >
-          <h3 className="text-2xl font-bold mb-6 text-center">
-            Ce qu'on offre 🎁
+          <h3 className="text-2xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+            Ce qu'on offre
+            <Gift size={28} />
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              "🚀 Expérience solide pour votre portfolio",
-              "💻 Stack moderne et scalable",
-              "🤝 Environnement bienveillant",
-              "📚 Documentation complète",
-              "⏰ Réunions hebdo organisées",
-              "🎯 Objectifs clairs et atteignables",
+              { icon: Rocket, text: "Expérience solide pour votre portfolio" },
+              { icon: Settings, text: "Stack moderne et scalable" },
+              { icon: Target, text: "Environnement bienveillant" },
+              { icon: Bot, text: "Documentation complète" },
+              { icon: Gift, text: "Réunions hebdo organisées" },
+              { icon: Target, text: "Objectifs clairs et atteignables" },
             ].map((benefit, index) => (
               <motion.div
                 key={index}
@@ -131,10 +150,8 @@ const Recruitment = () => {
                 transition={{ duration: 0.4, delay: 0.7 + index * 0.05 }}
                 className="flex items-start gap-3"
               >
-                <span className="text-xl">{benefit.split(" ")[0]}</span>
-                <span className="text-neutral-surface">
-                  {benefit.substring(benefit.indexOf(" ") + 1)}
-                </span>
+                <benefit.icon size={20} className="text-light-sand mt-1" />
+                <span className="text-light-sand">{benefit.text}</span>
               </motion.div>
             ))}
           </div>
@@ -147,7 +164,7 @@ const Recruitment = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center"
         >
-          <p className="text-lg text-neutral-surface mb-6">
+          <p className="text-lg text-light-sand mb-6">
             Envoyez-nous un message avec votre rôle souhaité, compétences et
             motivation
           </p>
@@ -159,9 +176,10 @@ const Recruitment = () => {
                 boxShadow: "0 20px 40px rgba(255, 255, 255, 0.2)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 py-4 bg-white text-navy-dark text-lg font-bold rounded-card shadow-elevated hover:bg-neutral-surface transition-all duration-300"
+              className="inline-block px-8 py-4 bg-white text-dark-blue text-lg font-bold rounded-card shadow-elevated hover:bg-light-sand transition-all duration-300 flex items-center justify-center gap-2"
             >
-              📧 Postuler maintenant
+              <Mail size={20} />
+              Postuler maintenant
             </motion.a>
             <motion.a
               href="https://www.linkedin.com/in/luiza-nobrega-felix/"
@@ -169,12 +187,13 @@ const Recruitment = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 py-4 bg-primary-teal text-white text-lg font-semibold rounded-card shadow-soft hover:bg-primary-teal/90 transition-all duration-300"
+              className="inline-block px-8 py-4 bg-primary-blue text-white text-lg font-semibold rounded-card shadow-soft hover:bg-primary-blue/90 transition-all duration-300 flex items-center justify-center gap-2"
             >
-              💼 LinkedIn
+              <Briefcase size={20} />
+              LinkedIn
             </motion.a>
           </div>
-          <p className="text-sm text-neutral-surface mt-6 opacity-75">
+          <p className="text-sm text-light-sand mt-6 opacity-75">
             Entretien de 15 minutes pour faire connaissance • Réponse sous 48h
           </p>
         </motion.div>

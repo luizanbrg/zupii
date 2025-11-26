@@ -1,6 +1,15 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import {
+  Smartphone,
+  CheckCircle,
+  Trophy,
+  Zap,
+  Gamepad2,
+  BarChart3,
+  Volume2,
+} from "lucide-react";
 
 const DemoVideo = () => {
   const ref = useRef(null);
@@ -25,12 +34,12 @@ const DemoVideo = () => {
     <section
       id="demo"
       ref={ref}
-      className="py-24 lg:py-32 bg-navy-dark text-white relative overflow-hidden"
+      className="py-24 lg:py-32 bg-dark-blue text-white relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-primary-teal rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary-coral rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-primary-blue rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-light-sand rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -40,15 +49,16 @@ const DemoVideo = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-primary-teal/20 text-primary-teal text-sm font-semibold rounded-full mb-6">
-            📱 Démo Live
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-blue/20 text-primary-blue text-sm font-semibold rounded-full mb-6">
+            <Smartphone size={16} />
+            Démo Live
           </span>
 
           <h2 className="text-4xl lg:text-5xl font-extrabold mb-6">
             Voyez Zoopi en action
           </h2>
 
-          <p className="text-xl text-neutral-surface max-w-2xl mx-auto">
+          <p className="text-xl text-light-sand max-w-2xl mx-auto">
             Du login à la validation d'une tâche : découvrez l'expérience
             utilisateur fluide et gamifiée de Zoopi
           </p>
@@ -62,7 +72,7 @@ const DemoVideo = () => {
           className="max-w-md mx-auto relative"
         >
           {/* Phone frame */}
-          <div className="relative aspect-[9/19] bg-gradient-to-br from-white to-neutral-surface rounded-[3rem] p-4 shadow-elevated">
+          <div className="relative aspect-[9/19] bg-gradient-to-br from-white to-light-sand rounded-[3rem] p-4 shadow-elevated">
             {/* Screen with video */}
             <div
               className="relative w-full h-full bg-black rounded-[2.5rem] overflow-hidden cursor-pointer"
@@ -92,7 +102,7 @@ const DemoVideo = () => {
                   className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg"
                 >
                   <svg
-                    className="w-10 h-10 text-primary-teal ml-1"
+                    className="w-10 h-10 text-primary-blue ml-1"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -108,8 +118,9 @@ const DemoVideo = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   className="absolute top-4 right-4 bg-white/90 rounded-full px-3 py-2 flex items-center gap-2"
                 >
-                  <span className="text-xs font-semibold text-navy-dark">
-                    🔊 Son activé
+                  <Volume2 size={16} className="text-dark-blue" />
+                  <span className="text-xs font-semibold text-dark-blue">
+                    Son activé
                   </span>
                 </motion.div>
               )}
@@ -124,15 +135,13 @@ const DemoVideo = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="absolute -left-4 lg:-left-20 top-1/4 bg-white text-navy-dark rounded-2xl p-4 shadow-soft max-w-xs hidden lg:block"
+            className="absolute -left-4 lg:-left-20 top-1/4 bg-white text-dark-blue rounded-2xl p-4 shadow-soft max-w-xs hidden lg:block"
           >
             <div className="flex items-start gap-3">
-              <div className="text-2xl">✅</div>
+              <CheckCircle size={28} className="text-green-500" />
               <div>
                 <div className="font-bold text-sm mb-1">Tâche validée</div>
-                <div className="text-xs text-neutral-muted">
-                  +20 points gagnés
-                </div>
+                <div className="text-xs text-text-dark">+20 points gagnés</div>
               </div>
             </div>
           </motion.div>
@@ -141,15 +150,13 @@ const DemoVideo = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="absolute -right-4 lg:-right-20 bottom-1/4 bg-white text-navy-dark rounded-2xl p-4 shadow-soft max-w-xs hidden lg:block"
+            className="absolute -right-4 lg:-right-20 bottom-1/4 bg-white text-dark-blue rounded-2xl p-4 shadow-soft max-w-xs hidden lg:block"
           >
             <div className="flex items-start gap-3">
-              <div className="text-2xl">🏆</div>
+              <Trophy size={28} className="text-primary-blue" />
               <div>
                 <div className="font-bold text-sm mb-1">Badge débloqué !</div>
-                <div className="text-xs text-neutral-muted">
-                  Super Nettoyeur
-                </div>
+                <div className="text-xs text-text-dark">Super Nettoyeur</div>
               </div>
             </div>
           </motion.div>
@@ -163,15 +170,13 @@ const DemoVideo = () => {
           className="grid md:grid-cols-3 gap-8 mt-20 max-w-4xl mx-auto"
         >
           {[
-            { icon: "⚡", text: "Interface fluide et intuitive" },
-            { icon: "🎮", text: "Gamification immersive" },
-            { icon: "📊", text: "Stats en temps réel" },
+            { icon: Zap, text: "Interface fluide et intuitive" },
+            { icon: Gamepad2, text: "Gamification immersive" },
+            { icon: BarChart3, text: "Stats en temps réel" },
           ].map((item, index) => (
             <div key={index} className="text-center">
-              <div className="text-4xl mb-3">{item.icon}</div>
-              <div className="text-neutral-surface font-medium">
-                {item.text}
-              </div>
+              <item.icon size={40} className="mx-auto mb-3 text-light-sand" />
+              <div className="text-light-sand font-medium">{item.text}</div>
             </div>
           ))}
         </motion.div>
