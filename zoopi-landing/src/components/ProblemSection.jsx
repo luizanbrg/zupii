@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
-import { Scale, AlertCircle, EyeOff, TrendingDown, ArrowDown } from "lucide-react";
+import {
+  Scale,
+  AlertCircle,
+  EyeOff,
+  TrendingDown,
+  ArrowDown,
+} from "lucide-react";
 
 const ProblemSection = () => {
   const painPoints = [
@@ -129,18 +135,18 @@ const ProblemSection = () => {
               ?
             </p>
           </div>
-          
+
           {/* Arrow indicator */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
-            animate={{ 
+            animate={{
               opacity: [0.4, 1, 0.4],
-              y: [0, 15, 0]
+              y: [0, 15, 0],
             }}
             transition={{
               duration: 2,
               repeat: Infinity,
-              ease: "easeInOut"
+              ease: "easeInOut",
             }}
             className="mt-16"
           >
