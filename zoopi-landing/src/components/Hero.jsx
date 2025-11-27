@@ -1,18 +1,12 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Gamepad2, Smartphone, Users, Trophy, Flame } from "lucide-react";
+import { Gamepad2, Smartphone, Trophy, Flame, ChevronDown } from "lucide-react";
 
 const Hero = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
-  const scrollToDemo = () => {
-    document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToRecruitment = () => {
-    document
-      .getElementById("recruitment")
-      ?.scrollIntoView({ behavior: "smooth" });
+  const scrollToNextSection = () => {
+    document.getElementById("problem")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -73,10 +67,9 @@ const Hero = () => {
               récompenses réelles !
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            {/* CTA Button */}
+            <div className="pt-4">
               <motion.button
-                onClick={scrollToDemo}
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0 20px 40px rgba(65, 105, 225, 0.3)",
@@ -86,16 +79,6 @@ const Hero = () => {
               >
                 <Smartphone size={20} />
                 Découvrir l'app
-              </motion.button>
-
-              <motion.button
-                onClick={scrollToRecruitment}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-white text-dark-blue text-lg font-semibold rounded-card shadow-soft border-2 border-light-sand hover:border-primary-blue transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                <Users size={20} />
-                Rejoindre l'équipe
               </motion.button>
             </div>
           </motion.div>
@@ -188,27 +171,11 @@ const Hero = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center text-text-dark cursor-pointer hover:text-primary-blue transition-colors"
-          onClick={() =>
-            document
-              .getElementById("problem")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
+          className="flex flex-col items-center text-text-dark/70 cursor-pointer hover:text-primary-blue transition-colors"
+          onClick={scrollToNextSection}
         >
           <span className="text-sm font-medium mb-2">Découvrir</span>
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
+          <ChevronDown className="w-6 h-6" />
         </motion.div>
       </motion.div>
     </section>
