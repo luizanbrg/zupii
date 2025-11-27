@@ -18,7 +18,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-light-sand via-white to-primary-blue/5"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-light-sand via-light-sand/60 to-primary-blue/10"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -30,7 +30,7 @@ const Hero = () => {
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.08, scale: 1 }}
+          animate={{ opacity: 0.15, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.3 }}
           className="absolute bottom-20 left-10 w-80 h-80 bg-light-sand rounded-full blur-3xl"
         />
@@ -43,29 +43,34 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-left space-y-8"
+            className="text-left space-y-6"
           >
+            {/* Logo/Nom de l'app en très grand */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-light-sand text-dark-blue text-sm font-semibold rounded-full mb-6">
+              <h1 className="text-7xl lg:text-8xl font-extrabold text-dark-blue mb-2">
+                ZOOPI
+              </h1>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-light-sand text-dark-blue text-sm font-semibold rounded-full">
                 <Gamepad2 size={16} />
-                MVP Fonctionnel · Roadmap 18 mois
-              </span>
+                Application mobile de gestion des tâches ménagères
+              </div>
             </motion.div>
 
-            <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight text-balance">
-              Fini les disputes —{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-light-sand">
-                transformez les corvées en jeu
+            {/* Slogan accrocheur et clair */}
+            <h2 className="text-3xl lg:text-4xl font-bold leading-tight text-text-dark">
+              Transformez vos corvées en{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-dark-blue">
+                missions à accomplir
               </span>
-            </h1>
+            </h2>
 
-            <p className="text-xl lg:text-2xl text-text-dark leading-relaxed max-w-2xl">
-              Zoopi gamifie les tâches ménagères : points, défis, classements et
-              récompenses pour un foyer plus coopératif.
+            <p className="text-xl lg:text-2xl text-text-dark leading-relaxed">
+              Gagnez des points, défiez vos colocataires et débloquez des
+              récompenses réelles !
             </p>
 
             {/* CTA Buttons */}
@@ -93,33 +98,6 @@ const Hero = () => {
                 Rejoindre l'équipe
               </motion.button>
             </div>
-
-            {/* Stats bar */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex flex-wrap gap-8 pt-8 border-t border-light-sand/50"
-            >
-              <div>
-                <div className="text-3xl font-bold text-primary-blue">82%</div>
-                <div className="text-sm text-text-dark">
-                  Conflits en colocation
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary-blue">60k</div>
-                <div className="text-sm text-text-dark">
-                  Objectif MAU T4 2025
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary-blue">
-                  18 mois
-                </div>
-                <div className="text-sm text-text-dark">Roadmap complète</div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Right - Phone Mockup with Image */}
