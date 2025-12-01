@@ -160,7 +160,7 @@ Tout le contenu de `forum.md` et `Zoopi.pdf` a été utilisé :
 ## 🎨 Style visuel
 
 - **Chaleureux** - Couleurs vives mais pro (teal, coral, yellow)
-- **Moderne** - Glassmorphism, gradients, shadows douces
+- **Moderne** - Glassmorphism, gradients, shadows douces.
 - **Fun** - Emojis, animations, ton accessible
 - **Professionnel** - Typographie claire, hiérarchie visuelle
 - **Ludique** - Gaming elements (badges, points, streaks)
