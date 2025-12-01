@@ -117,7 +117,7 @@ const SolutionSection = () => {
 
         {/* Card Stack */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative" style={{ minHeight: "550px" }}>
+          <div className="relative" style={{ minHeight: "495px" }}>
             {/* Render all cards with stacking effect */}
             {features.map((feature, index) => {
               // Calculate position relative to current index
@@ -144,11 +144,21 @@ const SolutionSection = () => {
                   style={{
                     pointerEvents: isActive ? "auto" : "none",
                   }}
+                  whileHover={
+                    isActive
+                      ? {
+                          scale: 1.02,
+                          transition: { duration: 0.2 },
+                        }
+                      : {}
+                  }
                 >
                   <div
                     className={`bg-white rounded-3xl shadow-elevated border-2 border-light-sand/50 p-8 lg:p-12 ${
-                      isActive ? "hover:shadow-2xl" : ""
-                    } transition-shadow duration-300`}
+                      isActive
+                        ? "hover:shadow-[0_25px_60px_-10px_rgba(0,0,0,0.3)]"
+                        : ""
+                    } transition-all duration-300`}
                   >
                     {/* Icon & Title */}
                     <div className="flex items-center gap-4 mb-6">

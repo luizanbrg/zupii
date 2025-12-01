@@ -9,10 +9,14 @@ const Hero = () => {
     document.getElementById("problem")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToDemo = () => {
+    document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-light-sand via-light-sand/60 to-primary-blue/10"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-light-sand via-cream to-white"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -37,13 +41,14 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-left space-y-6"
+            className="text-center lg:text-left space-y-6"
           >
             {/* Logo/Nom de l'app en très grand */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex flex-col items-center lg:items-start"
             >
               <h1 className="text-7xl lg:text-8xl font-extrabold text-dark-blue mb-2">
                 ZOOPI
@@ -68,13 +73,14 @@ const Hero = () => {
             </p>
 
             {/* CTA Button */}
-            <div className="pt-4">
+            <div className="pt-4 flex justify-center">
               <motion.button
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0 20px 40px rgba(65, 105, 225, 0.3)",
                 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={scrollToDemo}
                 className="px-8 py-4 bg-primary-blue text-white text-lg font-bold rounded-card shadow-soft hover:shadow-elevated transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Smartphone size={20} />

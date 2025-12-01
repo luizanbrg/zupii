@@ -34,7 +34,7 @@ const ProblemSection = () => {
   return (
     <section
       id="problem"
-      className="relative pt-12 pb-8 lg:pt-20 lg:pb-12 overflow-hidden bg-gradient-to-b from-primary-blue/5 via-light-sand/30 to-cream"
+      className="relative pt-12 pb-8 lg:pt-20 lg:pb-12 overflow-hidden bg-gradient-to-b from-white via-cream to-cream"
     >
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
