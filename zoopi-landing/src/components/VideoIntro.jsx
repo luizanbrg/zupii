@@ -56,7 +56,6 @@ const VideoAd = () => {
               ref={videoRef}
               className="w-full h-auto"
               controls
-              muted
               playsInline
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}

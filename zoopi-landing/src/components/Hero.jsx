@@ -66,8 +66,8 @@ const Hero = () => {
             </h2>
 
             <p className="text-xl lg:text-2xl text-text-dark leading-relaxed">
-              Gagnez des points, défiez vos colocataires et débloquez des
-              récompenses réelles !
+              Gagnez des points, défiez vos colocataires et soyez le premier du
+              classement !
             </p>
 
             {/* CTA Button */}
