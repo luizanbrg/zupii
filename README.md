@@ -71,9 +71,6 @@ Le projet Zoopi est structuré autour de deux documents de référence :
   → Décrit **le travail à réaliser** pour construire Zoopi (lots de travail, tâches, organisation).
   Fichier : [`WBS_Zoopi.md`](./WBS_Zoopi.md)
 
-📌 La section suivante (“High-level description of the functions defined in the WBS”) propose une **vue synthétique** des grands blocs fonctionnels du WBS.
-Pour le détail complet des work packages et des tâches associées, se référer au fichier `WBS_Zoopi.md`.
-
 ---
 
 ## À quoi s'attendre côté technique:
