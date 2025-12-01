@@ -40,7 +40,7 @@ const DemoSection = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-blue/10 rounded-full mb-6">
             <Smartphone className="w-5 h-5 text-primary-blue" />
             <span className="text-primary-blue font-semibold text-sm">
-              Démo en action
+              Démo prototype
             </span>
           </div>
 

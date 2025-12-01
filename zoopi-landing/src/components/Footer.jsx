@@ -72,43 +72,6 @@ const Footer = () => {
               Tech
             </a>
           </motion.div>
-
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="flex gap-3"
-          >
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-9 h-9 bg-white/10 hover:bg-primary-blue rounded-full flex items-center justify-center transition-colors duration-300"
-              aria-label="GitHub"
-            >
-              <Github className="w-4 h-4 text-white" />
-            </motion.a>
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-9 h-9 bg-white/10 hover:bg-primary-blue rounded-full flex items-center justify-center transition-colors duration-300"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-4 h-4 text-white" />
-            </motion.a>
-            <motion.a
-              href="mailto:contact@zoopi.app"
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-9 h-9 bg-white/10 hover:bg-primary-blue rounded-full flex items-center justify-center transition-colors duration-300"
-              aria-label="Email"
-            >
-              <Mail className="w-4 h-4 text-white" />
-            </motion.a>
-          </motion.div>
         </div>
 
         {/* Divider */}
