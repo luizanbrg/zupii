@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useRef, useState } from "react";
+import pubVideo from "../assets/pub.mp4";
 
 const VideoAd = () => {
   const videoRef = useRef(null);
@@ -60,7 +61,7 @@ const VideoAd = () => {
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
             >
-              <source src="/src/assets/pub.mp4" type="video/mp4" />
+              <source src={pubVideo} type="video/mp4" />
               Votre navigateur ne supporte pas la lecture de vidéos.
             </video>
           </div>

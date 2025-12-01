@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Gamepad2, Smartphone, Trophy, Flame, ChevronDown } from "lucide-react";
+import zoopiImage from "../assets/zoopi.jpeg";
 
 const Hero = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -105,7 +106,7 @@ const Hero = () => {
                 <div className="relative w-full h-full bg-black rounded-[2.5rem] overflow-hidden">
                   {/* Zoopi image inside phone screen */}
                   <img
-                    src="/src/assets/zoopi.jpeg"
+                    src={zoopiImage}
                     alt="Zoopi App"
                     className="w-full h-full object-cover object-center"
                     style={{
