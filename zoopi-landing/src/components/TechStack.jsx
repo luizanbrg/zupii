@@ -146,8 +146,7 @@ const TechStack = () => {
                   Notre architecture découplée permet d'adapter le projet selon
                   les besoins. Le choix des technologies peut évoluer : d'autres
                   frameworks mobile, langages backend ou bases de données sont
-                  envisageables. L'essentiel réside dans la qualité de
-                  l'implémentation et la robustesse de l'architecture.
+                  envisageables.
                 </p>
               </div>
             </div>
