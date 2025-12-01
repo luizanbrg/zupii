@@ -1,9 +1,18 @@
 import { motion } from "framer-motion";
 import { Play, Smartphone } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import demoVideo from "../assets/demo.mp4";
 
 const DemoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
+
+  const handlePlayClick = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
 
   return (
     <section
@@ -76,13 +85,14 @@ const DemoSection = () => {
               <div className="relative bg-black rounded-[2.5rem] overflow-hidden aspect-[9/19.5]">
                 {/* Video element */}
                 <video
+                  ref={videoRef}
                   className="w-full h-full object-cover"
                   controls
-                  poster="/path-to-your-thumbnail.jpg"
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
+                  onEnded={() => setIsPlaying(false)}
                 >
-                  <source src="/path-to-your-video.mp4" type="video/mp4" />
+                  <source src={demoVideo} type="video/mp4" />
                   Votre navigateur ne supporte pas la lecture de vidéos.
                 </video>
 
@@ -91,12 +101,13 @@ const DemoSection = () => {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="absolute inset-0 flex items-center justify-center bg-dark-blue/20 backdrop-blur-[2px]"
+                    className="absolute inset-0 flex items-center justify-center bg-dark-blue/20 backdrop-blur-[2px] cursor-pointer"
+                    onClick={handlePlayClick}
                   >
                     <motion.div
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
-                      className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-2xl cursor-pointer"
+                      className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-2xl"
                     >
                       <Play
                         className="w-8 h-8 text-primary-blue ml-1"
