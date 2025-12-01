@@ -6,7 +6,9 @@ const Hero = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   const scrollToVideo = () => {
-    document.getElementById("video-intro")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("video-intro")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

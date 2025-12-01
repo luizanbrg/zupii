@@ -11,7 +11,10 @@ const VideoAd = () => {
   };
 
   return (
-    <section id="video-intro" className="relative py-12 lg:py-16 pb-24 lg:pb-32 overflow-hidden bg-gradient-to-b from-white via-cream to-white">
+    <section
+      id="video-intro"
+      className="relative py-12 lg:py-16 pb-24 lg:pb-32 overflow-hidden bg-gradient-to-b from-white via-cream to-white"
+    >
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
