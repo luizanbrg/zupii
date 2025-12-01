@@ -2,6 +2,8 @@ import Hero from "./components/Hero";
 import ProblemSection from "./components/ProblemSection";
 import SolutionSection from "./components/SolutionSection";
 import DemoSection from "./components/DemoSection";
+import TechStack from "./components/TechStack";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <ProblemSection />
       <SolutionSection />
       <DemoSection />
+      <TechStack />
+      <Footer />
     </div>
   );
 }
