@@ -57,7 +57,7 @@ const Recruitment = () => {
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-64 h-64 bg-primary-blue rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-64 h-64 bg-light-sand rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-64 h-64 bg-white rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -67,7 +67,7 @@ const Recruitment = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-light-sand/20 text-light-sand text-sm font-semibold rounded-full mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white text-sm font-semibold rounded-full mb-6">
             <Flame size={16} />
             On recrute !
           </span>
@@ -76,7 +76,7 @@ const Recruitment = () => {
             Rejoignez l'aventure Zoopi
           </h2>
 
-          <p className="text-xl text-light-sand max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
             Vous êtes étudiant(e) en MSc et vous voulez développer une
             application mobile complète avec des fonctionnalités avancées ?
           </p>
@@ -112,10 +112,10 @@ const Recruitment = () => {
               whileHover={{ y: -8, scale: 1.05 }}
               className="bg-white/10 backdrop-blur-sm rounded-card p-6 border border-white/20 hover:border-primary-blue hover:bg-white/15 transition-all duration-300"
             >
-              <role.icon size={48} className="text-light-sand mb-4" />
+              <role.icon size={48} className="text-white mb-4" />
               <h3 className="text-xl font-bold mb-2">{role.title}</h3>
-              <p className="text-light-sand text-sm mb-3">{role.tech}</p>
-              <div className="inline-block px-3 py-1 bg-light-sand rounded-full text-xs font-semibold">
+              <p className="text-white/80 text-sm mb-3">{role.tech}</p>
+              <div className="inline-block px-3 py-1 bg-white text-dark-blue text-xs font-semibold rounded-full">
                 {role.available} poste{role.available > 1 ? "s" : ""} ouvert
                 {role.available > 1 ? "s" : ""}
               </div>
@@ -150,8 +150,8 @@ const Recruitment = () => {
                 transition={{ duration: 0.4, delay: 0.7 + index * 0.05 }}
                 className="flex items-start gap-3"
               >
-                <benefit.icon size={20} className="text-light-sand mt-1" />
-                <span className="text-light-sand">{benefit.text}</span>
+                <benefit.icon size={20} className="text-white mt-1" />
+                <span className="text-white/80">{benefit.text}</span>
               </motion.div>
             ))}
           </div>
@@ -164,7 +164,7 @@ const Recruitment = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center"
         >
-          <p className="text-lg text-light-sand mb-6">
+          <p className="text-lg text-white/80 mb-6">
             Envoyez-nous un message avec votre rôle souhaité, compétences et
             motivation
           </p>
@@ -193,7 +193,7 @@ const Recruitment = () => {
               LinkedIn
             </motion.a>
           </div>
-          <p className="text-sm text-light-sand mt-6 opacity-75">
+          <p className="text-sm text-white/70 mt-6">
             Entretien de 15 minutes pour faire connaissance • Réponse sous 48h
           </p>
         </motion.div>
