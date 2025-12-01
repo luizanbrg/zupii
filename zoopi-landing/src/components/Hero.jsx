@@ -5,12 +5,8 @@ import { Gamepad2, Smartphone, Trophy, Flame, ChevronDown } from "lucide-react";
 const Hero = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
-  const scrollToNextSection = () => {
-    document.getElementById("problem")?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToDemo = () => {
-    document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToVideo = () => {
+    document.getElementById("video-intro")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -80,7 +76,7 @@ const Hero = () => {
                   boxShadow: "0 20px 40px rgba(65, 105, 225, 0.3)",
                 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={scrollToDemo}
+                onClick={scrollToVideo}
                 className="px-8 py-4 bg-primary-blue text-white text-lg font-bold rounded-card shadow-soft hover:shadow-elevated transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Smartphone size={20} />
@@ -178,7 +174,7 @@ const Hero = () => {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           className="flex flex-col items-center text-text-dark/70 cursor-pointer hover:text-primary-blue transition-colors"
-          onClick={scrollToNextSection}
+          onClick={scrollToVideo}
         >
           <span className="text-sm font-medium mb-2">Découvrir</span>
           <ChevronDown className="w-6 h-6" />
